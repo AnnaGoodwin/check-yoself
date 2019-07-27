@@ -1,0 +1,43 @@
+* {
+  margin: auto 0;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1F1F3D;
+  height: 100px;
+}
+
+
+main {
+  height: 100vh;
+  display: flex;
+}
+
+aside {
+  height: 100vh;
+  width: 50%;
+  background-color: #587A8A;
+}
+
+section {
+  background-color: #F3F6F7;
+  height: 100vh;
+  width: 50%;
+}
+
+.header__image {
+  height: 20px;
+  background-color: #F3F6F7;
+}
+
+.header__h1 {
+  color: #FFFFFF;
+}
+
+.header__h1--span {
+  color: #FFC30C;
+}

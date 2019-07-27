@@ -2,12 +2,15 @@
 <html>
 <head>
   <title>Check Yo Self</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="body__header">
     <h1 class="header__h1">CHECK <span class="header__h1--span">YO' </span>SELF</h1>
-    <img class="header__image" src="images/search.svg" alt="search">
-    <input class="header__input" placeholder="Search">
+    <div class="header__div">
+      <img class="header__image" src="images/search.svg" alt="search">
+      <input class="header__input" placeholder="Search">
+    </div>
   </header>
   <main class="body__main">
     <aside class="main__aside">
@@ -15,8 +18,10 @@
         <label class="form__label--title" for="title">Task Title</label>
         <input class="form__input--title" id="title">
         <label class="form__label--task" for="item">Task Item</label>
-        <input class="form__input--task"id="item">
-        <button class="form__btn--plus" type="button">+</button>
+        <div class="form__div">
+          <input class="form__input--task"id="item">
+          <button class="form__btn--plus" type="button">+</button>
+        </div>
         <button class="form__btn--task" type="button">Make Task List</button>
         <button class="form__btn--clear" type="button">Clear All</button>
       </form>
