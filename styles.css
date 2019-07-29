@@ -13,19 +13,22 @@ header {
 
 
 main {
-  height: 100vh;
   display: flex;
 }
 
 aside {
-  height: 100vh;
   width: 50%;
   background-color: #587A8A;
 }
 
+form {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 section {
   background-color: #F3F6F7;
-  height: 100vh;
   width: 50%;
 }
 
