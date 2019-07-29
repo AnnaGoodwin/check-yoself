@@ -44,3 +44,16 @@ section {
 .header__h1--span {
   color: #FFC30C;
 }
+
+.form__div--tasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-container {
+  display: flex;
+}
+
+.delete-btn {
+  width: 25px;
+}
