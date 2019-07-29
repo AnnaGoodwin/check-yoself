@@ -1,10 +1,9 @@
 class ToDoList {
-
-  constructor(id, title, urgent, tasks) {
-    this.id = id;
-    this.title = title;
-    this.urgent = urgent || false;
-    this.tasks = tasks || [];
+  constructor(obj) {
+    this.id = obj.id || Date.now();
+    this.title = obj.title;
+    this.urgent = obj.urgent || false;
+    this.tasks = obj.tasks || [];
   }
 
   saveToStorage() {
