@@ -1,3 +1,4 @@
+// Variables
 var taskContainer = document.querySelector('.form__div--tasks');
 var titleInput = document.querySelector('.form__input--title');
 var plusBtn = document.querySelector('.form__btn--plus');
@@ -7,11 +8,13 @@ var cardSection = document.querySelector('.main__section');
 var makeTaskListBtn = document.querySelector('.form__btn--task');
 var listOfToDos = [];
 
+// Event Listeners
 taskInput.addEventListener('keyup', handlePlusBtn);
 plusBtn.addEventListener('click', displayTask);
 taskList.addEventListener('click', deleteAsideTask);
 makeTaskListBtn.addEventListener('click', buildCard);
 
+// Functions
 function displayTask() {
   var task = `
     <div class="task-container" data-id="${Date.now()}">
@@ -22,6 +25,7 @@ function displayTask() {
   taskContainer.insertAdjacentHTML('beforeend', task);
   taskInput.value = '';
   handlePlusBtn();
+  disableMakeTaskBtn();
 }
 
 function deleteAsideTask(event) {
@@ -46,6 +50,7 @@ function buildCard() {
   });
   listOfToDos.push(todoList);
   appendCard(todoList);
+  clearAll();
 }
 
 function getTasks() {
@@ -89,12 +94,21 @@ function appendCard(card) {
 function pullTasks(card) {
   var strings = '';
   card.tasks.forEach(function(task) {
-    strings += `<p><img src="" alt="checkbox">${task.title}</p>`
+    strings += `<p><img src="" alt="checkbox">${task.title}</p>`;
   })
   return strings;
 }
 
 function clearAll() {
   taskInput.value = '';
+  titleInput.value = '';
+  taskList.innerHTML = '';
+}
 
+function disableMakeTaskBtn() {
+  if(taskList.innerHTML === '' || titleInput.value === '') {
+    makeTaskListBtn.disabled = true;
+  } else {
+    makeTaskListBtn.disabled = false;
+  }
 }
