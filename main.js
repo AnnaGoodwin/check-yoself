@@ -6,15 +6,35 @@ var taskInput = document.querySelector('.form__input--task');
 var taskList = document.querySelector('.form__div--tasks');
 var cardSection = document.querySelector('.main__section');
 var makeTaskListBtn = document.querySelector('.form__btn--task');
-var listOfToDos = [];
+var clearAllBtn = document.querySelector('.form__btn--clear');
+var listOfToDos = JSON.parse(localStorage.getItem('storedTodos')) || [];
 
 // Event Listeners
+window.addEventListener('load', loadPage);
 taskInput.addEventListener('keyup', handlePlusBtn);
 plusBtn.addEventListener('click', displayTask);
 taskList.addEventListener('click', deleteAsideTask);
 makeTaskListBtn.addEventListener('click', buildCard);
+clearAllBtn.addEventListener('click', clearAll);
 
 // Functions
+function loadPage() {
+  instantiateToDos();
+  appendToDos();
+}
+
+function instantiateToDos() {
+  listOfToDos = listOfToDos.map(function(card) {
+    return new ToDoList(card);
+  });
+}
+
+function appendToDos() {
+  listOfToDos.forEach(function(card) {
+    appendCard(card);
+  })
+}
+
 function displayTask() {
   var task = `
     <div class="task-container" data-id="${Date.now()}">
@@ -25,7 +45,7 @@ function displayTask() {
   taskContainer.insertAdjacentHTML('beforeend', task);
   taskInput.value = '';
   handlePlusBtn();
-  disableMakeTaskBtn();
+  disableBtn();
 }
 
 function deleteAsideTask(event) {
@@ -44,22 +64,23 @@ function handlePlusBtn() {
 
 function buildCard() {
   var tasksArr = getTasks();
-  var todoList = new ToDoList({
+  var toDoList = new ToDoList({
     title:titleInput.value,
     tasks:tasksArr
   });
-  listOfToDos.push(todoList);
-  appendCard(todoList);
+  listOfToDos.push(toDoList);
+  toDoList.saveToStorage(listOfToDos);
+  appendCard(toDoList);
   clearAll();
 }
 
 function getTasks() {
   var tasksArr = [];
   var tasksOnDom = document.querySelectorAll('.task-container');
-  tasksOnDom.forEach(function(el) {
-    tasksArr.push({id: el.dataset.id,
-    title: el.innerText,
-    complete: false})
+  tasksOnDom.forEach(function(task) {
+    tasksArr.push({id: task.dataset.id,
+    title: task.innerText,
+    complete: false});
   })
   return tasksArr;
 }
@@ -94,7 +115,7 @@ function appendCard(card) {
 function pullTasks(card) {
   var strings = '';
   card.tasks.forEach(function(task) {
-    strings += `<p><img src="" alt="checkbox">${task.title}</p>`;
+    strings += `<p data-id=${task.id}><img src="" alt="checkbox">${task.title}</p>`;
   })
   return strings;
 }
@@ -105,10 +126,12 @@ function clearAll() {
   taskList.innerHTML = '';
 }
 
-function disableMakeTaskBtn() {
+function disableBtn() {
   if(taskList.innerHTML === '' || titleInput.value === '') {
     makeTaskListBtn.disabled = true;
+    clearAllBtn.disabled = true;
   } else {
     makeTaskListBtn.disabled = false;
+    clearAllBtn.disabled = false;
   }
 }

@@ -6,12 +6,12 @@ class ToDoList {
     this.tasks = obj.tasks || [];
   }
 
-  saveToStorage() {
-
+  saveToStorage(listOfToDos) {
+    localStorage.setItem('storedTodos', JSON.stringify(listOfToDos));
   }
 
   deleteFromStorage() {
-
+    
   }
 
   updateToDo() {
