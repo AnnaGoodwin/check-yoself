@@ -4,6 +4,10 @@
   border: 1px solid red;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 header {
   display: flex;
   justify-content: space-between;
