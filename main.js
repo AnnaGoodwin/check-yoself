@@ -8,13 +8,13 @@ var makeTaskListBtn = document.querySelector('.form__btn--task');
 var listOfToDos = [];
 
 taskInput.addEventListener('keyup', handlePlusBtn);
-plusBtn.addEventListener('click', createTaskObj);
+plusBtn.addEventListener('click', displayTask);
 taskList.addEventListener('click', deleteAsideTask);
 makeTaskListBtn.addEventListener('click', buildCard);
 
-function displayTask(obj) {
+function displayTask() {
   var task = `
-    <div class="task-container" data-id="${obj.id}">
+    <div class="task-container" data-id="${Date.now()}">
       <img class="delete-btn" src="Images/delete.svg" alt="delete">
       <p class="task-text">${taskInput.value}</p>
     </div>
@@ -22,15 +22,6 @@ function displayTask(obj) {
   taskContainer.insertAdjacentHTML('beforeend', task);
   taskInput.value = '';
   handlePlusBtn();
-}
-
-function createTaskObj() {
-  var taskObj = {
-    id: Date.now(),
-    title: taskInput.value,
-    complete: false
-  }
-  displayTask(taskObj)
 }
 
 function deleteAsideTask(event) {
@@ -47,11 +38,25 @@ function handlePlusBtn() {
   }
 }
 
-function buildCard(obj) {
-  var todoList = new ToDoList({title:titleInput.value});
-  console.log(todoList);
+function buildCard() {
+  var tasksArr = getTasks();
+  var todoList = new ToDoList({
+    title:titleInput.value,
+    tasks:tasksArr
+  });
   listOfToDos.push(todoList);
   appendCard(todoList);
+}
+
+function getTasks() {
+  var tasksArr = [];
+  var tasksOnDom = document.querySelectorAll('.task-container');
+  tasksOnDom.forEach(function(el) {
+    tasksArr.push({id: el.dataset.id,
+    title: el.innerText,
+    complete: false})
+  })
+  return tasksArr;
 }
 
 function appendCard(card) {
@@ -61,6 +66,7 @@ function appendCard(card) {
         <h2 class="section__h2" contenteditable="true">${card.title}</h2>
       </section>
       <section class="article__section--mid flex">
+      ${pullTasks(card)}
       </section>
       <section class="article__section--bot flex">
         <div class="urgent__container flex">
@@ -77,8 +83,15 @@ function appendCard(card) {
         </div>
       </section>
     </article>`;
-    console.log(card.title);
     cardSection.insertAdjacentHTML('afterbegin', cardText);
+}
+
+function pullTasks(card) {
+  var strings = '';
+  card.tasks.forEach(function(task) {
+    strings += `<p><img src="" alt="checkbox">${task.title}</p>`
+  })
+  return strings;
 }
 
 function clearAll() {
