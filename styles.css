@@ -9,25 +9,29 @@ body {
 }
 
 main {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #F3F6F7;
   display: flex;
 }
 
 aside {
+  padding-top: 20px;
   border-top: 2px solid #1F1F3D;
   margin: 0;
   width: 30%;
   background-color: #587A8A;
-}
-
-form {
-  border-bottom: 2px solid #3C6577;
   padding: 10px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
 input {
-  padding-left: 15px;
+  margin: 5px 0px;
+  padding-left: 10px;
   font-size: 18px;
   outline: none;
   height: 50px;
@@ -36,6 +40,8 @@ input {
 }
 
 button {
+  width: 100%;
+  height: 50px;
   font-weight: 400;
   font-size: 20px;
   margin: 10px 0;
@@ -82,6 +88,10 @@ section p,
 .header__div,
 .task-container {
   display: flex;
+}
+
+.task-container {
+  margin: 10px 20px;
 }
 
 .main__section {
@@ -137,7 +147,7 @@ section p,
 }
 
 .aside__btn--filter {
-  margin: 20px;
+
 }
 
 .section__h2 {
@@ -151,7 +161,6 @@ section p,
   border-bottom: 2px solid #C7D3D8;
 }
 
-form,
 .form__div--tasks,
 .article__section--mid {
   display: flex;
@@ -167,10 +176,20 @@ form,
 }
 
 .form__btn--plus {
+  margin: 5px 0;
   width: 50px;
   font-weight: lighter;
   font-size: 39px;
   padding: 0;
+}
+
+.task-text {
+  color: #FFFFFF;
+}
+
+.border-bottom {
+  border-bottom: 2px solid #3C6577;
+  margin: 20px 0
 }
 
 .article__section--bot {
@@ -193,5 +212,6 @@ form,
 }
 
 .delete-btn {
+  margin: 0 10px;
   width: 25px;
 }
