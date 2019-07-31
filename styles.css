@@ -260,11 +260,6 @@ section p,
     flex-direction: column;
   }
 
-  .header__div {
-    width: 100%;
-    margin: 10px;
-  }
-
   .main__section {
     align-items: center;
     border-top: none;
