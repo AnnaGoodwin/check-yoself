@@ -113,7 +113,7 @@ function appendCard(card) {
 function pullTasks(card) {
   var strings = '';
   card.tasks.forEach(function(task) {
-    strings += `<p data-id=${task.id}><img src="" alt="checkbox">${task.title}</p>`;
+    strings += `<p data-id=${task.id}><img src="Images/checkbox.svg" alt="checkbox">${task.title}</p>`;
   })
   return strings;
 }
