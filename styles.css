@@ -63,6 +63,8 @@ section p,
 }
 
 #task__text {
+  color: #1F1F3D;
+  margin-top: 10px;
   font-size: 18px;
   display: flex;
 }
@@ -102,13 +104,14 @@ section p,
 }
 
 .section__h2 {
+  color: #1F1F3D;
+  margin-left: 10px;
   font-size: 25px;
   font-weight: 700;
 }
 
 .article__section--top {
   border-bottom: 2px solid #C7D3D8;
-  width: 100%;
 }
 
 form,
@@ -127,7 +130,8 @@ form,
 
 .urgent__container,
 .delete__container {
-  font-size: 12px;
+  color: #3C6577;
+  font-size: 11px;
   text-align: center;
   padding: 10px;
 }
