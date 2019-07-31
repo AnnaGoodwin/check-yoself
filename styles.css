@@ -20,7 +20,7 @@ main {
 }
 
 aside {
-  height: 100vh;
+  margin: 0;
   width: 30%;
   background-color: #587A8A;
 }
@@ -89,6 +89,10 @@ input {
 
 .task-container {
   display: flex;
+}
+
+.article__card {
+  border: 1px solid #C7D3D8;
 }
 
 .delete-btn {
