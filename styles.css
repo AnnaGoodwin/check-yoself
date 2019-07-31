@@ -42,6 +42,10 @@ button {
   border: 2px solid #1F1F3D;
 }
 
+button:disabled {
+  opacity: 0.5;
+}
+
 label {
   font-size: 15px;
   color: #FFFFFF;
