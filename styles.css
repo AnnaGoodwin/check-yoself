@@ -91,6 +91,11 @@ article {
   width: 45%;
 }
 
+::placeholder {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+
 /* Classes */
 
 section p,
@@ -105,11 +110,6 @@ section p,
 
 .main__section {
   border: 2px solid #1F1F3D;
-}
-
-::placeholder {
-  font-size: 15px;
-  padding-bottom: 5px;
 }
 
 #task__text {
@@ -132,7 +132,7 @@ section p,
 .header__img {
   background-color: #F3F6F7;
   height: 50px;
-  padding: 10px;
+  padding: 13px;
   width: 50px;
 }
 
@@ -172,6 +172,10 @@ section p,
   flex-direction: column;
 }
 
+.form__label--task {
+  margin-top: 30px;
+}
+
 .form__div--input--container {
   display: flex;
 }
@@ -181,7 +185,7 @@ section p,
 }
 
 .form__btn--plus {
-  font-size: 39px;
+  font-size: 27px;
   font-weight: lighter;
   margin: 5px 0;
   padding: 0;
