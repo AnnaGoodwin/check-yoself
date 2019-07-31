@@ -27,6 +27,8 @@ form {
 }
 
 input {
+  padding-left: 15px;
+  font-size: 18px;
   outline: none;
   height: 50px;
   border: 2px solid #1F1F3D;
@@ -48,7 +50,7 @@ button:disabled {
 
 label {
   font-size: 15px;
-  color: #FFFFFF;
+  color: #C7D3D8;
 }
 
 section {
@@ -89,7 +91,6 @@ section p,
 ::placeholder {
   font-size: 15px;
   padding-bottom: 5px;
-  padding-left: 15px;
 }
 
 #task__text {
