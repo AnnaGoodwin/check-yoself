@@ -15,15 +15,15 @@ main {
 }
 
 aside {
-  padding-top: 20px;
   border-top: 2px solid #1F1F3D;
   margin: 0;
   width: 30%;
   background-color: #587A8A;
-  padding: 10px;
 }
 
 form {
+  border-bottom: 2px solid #3C6577;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   margin: 20px 0;
@@ -183,8 +183,16 @@ section p,
   padding: 0;
 }
 
+.form__btn--clear {
+  margin-bottom: 30px;
+}
+
 .task-text {
   color: #FFFFFF;
+}
+
+.form__div--btn--container {
+  padding: 10px;
 }
 
 .border-bottom {
