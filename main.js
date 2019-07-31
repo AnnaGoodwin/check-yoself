@@ -16,6 +16,7 @@ plusBtn.addEventListener('click', displayTask);
 taskList.addEventListener('click', deleteAsideTask);
 makeTaskListBtn.addEventListener('click', buildCard);
 clearAllBtn.addEventListener('click', clearAll);
+cardSection.addEventListener('click', deleteToDoCard);
 
 // Functions
 function loadPage() {
@@ -128,4 +129,16 @@ function disableBtn() {
     makeTaskListBtn.disabled = false;
     clearAllBtn.disabled = false;
   }
+}
+
+function deleteToDoCard(event) {
+  if (event.target.classList.contains('todo-card__bottom--delete')) {
+    event.target.parentNode.parentNode.parentNode.remove();
+    removeFromStorage(event);
+  }
+}
+
+function removeFromStorage(event) {
+  var targetIndex = findTargetIndex(event);
+  listOfToDos[targetIndex].deleteFromStorage(targetIndex, listOfToDos);
 }
