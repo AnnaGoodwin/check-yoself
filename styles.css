@@ -21,11 +21,6 @@ aside {
   background-color: #587A8A;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
 section {
   overflow: auto;
   padding: 20px;
@@ -68,6 +63,7 @@ section p,
 }
 
 #task__text {
+  font-size: 18px;
   display: flex;
 }
 
@@ -106,7 +102,7 @@ section p,
 }
 
 .section__h2 {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
 }
 
@@ -115,6 +111,7 @@ section p,
   width: 100%;
 }
 
+form,
 .form__div--tasks,
 .article__section--mid {
   display: flex;
@@ -132,7 +129,7 @@ section p,
 .delete__container {
   font-size: 12px;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
 }
 
 .check-img {
