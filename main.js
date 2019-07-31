@@ -8,6 +8,7 @@ var cardSection = document.querySelector('.main__section');
 var makeTaskListBtn = document.querySelector('.form__btn--task');
 var clearAllBtn = document.querySelector('.form__btn--clear');
 var listOfToDos = JSON.parse(localStorage.getItem('storedTodos')) || [];
+console.log(listOfToDos);
 
 // Event Listeners
 window.addEventListener('load', loadPage);
@@ -17,6 +18,7 @@ taskList.addEventListener('click', deleteAsideTask);
 makeTaskListBtn.addEventListener('click', buildCard);
 clearAllBtn.addEventListener('click', clearAll);
 cardSection.addEventListener('click', deleteToDoCard);
+cardSection.addEventListener('click', buttonHandler);
 
 // Functions
 function loadPage() {
@@ -131,8 +133,42 @@ function disableBtn() {
   }
 }
 
+function handleIndex(id) {
+  for(var i = 0; i < listOfToDos.length; i++)  {
+    if(id == listOfToDos[i].id) {
+      return i;
+    }
+  }
+}
+
+function findTargetIndex(event) {
+  var identification = event.target.closest('article').dataset.id;
+  var objIndex = handleIndex(identification);
+  return objIndex;
+}
+
 function deleteToDoCard(event) {
   if (event.target.classList.contains('todo-card__bottom--delete')) {
     event.target.parentNode.parentNode.parentNode.remove();
+    removeFromStorage(event);
   }
 }
+
+function removeFromStorage(card) {
+  console.log('here')
+  var targetIndex = findTargetIndex(event);
+  console.log(targetIndex);
+  listOfToDos = listOfToDos[targetIndex].deleteFromStorage(targetIndex, listOfToDos);
+}
+
+function toggleChecked(event) {
+  event.target.src.includes('Images/checkbox.svg') ? event.target.src = 'Images/checkbox-active.svg' : event.target.src = 'Images/checkbox.svg';
+}
+
+function buttonHandler(event) {
+  if ((event.target.src.includes('Images/checkbox.svg')) || (event.target.src.includes('Images/checkbox-active.svg'))) {
+    toggleChecked(event);
+  }
+}
+
+function get
