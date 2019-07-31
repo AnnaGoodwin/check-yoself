@@ -89,19 +89,15 @@ function appendCard(card) {
       <section class="article__section--top flex">
         <h2 class="section__h2" contenteditable="true">${card.title}</h2>
       </section>
-      <section class="article__section--mid flex">
+      <section class="article__section--mid">
       ${pullTasks(card)}
       </section>
-      <section class="article__section--bot flex">
-        <div class="urgent__container flex">
+      <section class="article__section--bot">
+        <div class="urgent__container">
           <img class="urgent__img" src="images/urgent.svg">
           <p>Urgent</p>
         </div>
-        <div class="input__container flex">
-          <input class="input__container--text" type="text" placeholder=" Add task">
-          <button class="input__container--btn">+</button>
-        </div>
-        <div class="flex">
+        <div class="delete__container">
           <img class="todo-card__bottom--delete" src="images/delete.svg">
           <p>Delete</p>
         </div>
