@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans';
 }
 
 main {
@@ -19,6 +19,31 @@ aside {
   margin: 0;
   width: 30%;
   background-color: #587A8A;
+}
+
+form {
+  border-bottom: 2px solid #3C6577;
+  padding: 10px;
+}
+
+input {
+  height: 50px;
+  border: 2px solid #1F1F3D;
+  border-radius: 2px;
+}
+
+button {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 10px 0;
+  color: #FFFFFF;
+  background-color: #1F1F3D;
+  border: 2px solid #1F1F3D;
+}
+
+label {
+  font-size: 15px;
+  color: #FFFFFF;
 }
 
 section {
@@ -79,7 +104,7 @@ section p,
   background-color: #1F1F3D;
 }
 
-.header__image {
+.header__img {
   padding: 10px;
   height: 50px;
   width: 50px;
@@ -94,6 +119,8 @@ section p,
 }
 
 .header__input {
+  border-radius: 0 0 2px 0;
+  border: none;
   margin-right: 10px;
   width: 350px;
   height: 50px;
@@ -101,6 +128,10 @@ section p,
 
 .header__h1--span {
   color: #FFC30C;
+}
+
+.aside__btn--filter {
+  margin: 20px;
 }
 
 .section__h2 {
@@ -119,6 +150,21 @@ form,
 .article__section--mid {
   display: flex;
   flex-direction: column;
+}
+
+.form__div--input--container {
+  display: flex;
+}
+
+.form__input--task {
+  width: 100%;
+}
+
+.form__btn--plus {
+  width: 50px;
+  font-weight: lighter;
+  font-size: 49px;
+  padding-top: 0;
 }
 
 .article__section--bot {
