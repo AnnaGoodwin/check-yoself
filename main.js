@@ -53,7 +53,7 @@ function deleteAsideTask(event) {
 }
 
 function handlePlusBtn() {
-    if(taskInput.value !== '') {
+  if (taskInput.value !== '') {
     plusBtn.disabled = false;
   } else {
     plusBtn.disabled = true;
@@ -94,11 +94,11 @@ function appendCard(card) {
       </ul>
       <footer class="article__section--bot">
         <div class="urgent__container">
-          <img class="urgent__img" src="images/urgent.svg">
+          <img class="urgent__img" src="Images/urgent.svg">
           <p>URGENT</p>
         </div>
         <div class="delete__container">
-          <img class="todo-card__bottom--delete" src="images/delete.svg">
+          <img class="todo-card__bottom--delete" src="Images/delete.svg">
           <p>DELETE</p>
         </div>
       </footer>
@@ -121,7 +121,7 @@ function clearAll() {
 }
 
 function disableBtn() {
-  if(taskList.innerText === '' || titleInput.value === '') {
+  if (taskList.innerText === '' || titleInput.value === '') {
     makeTaskListBtn.disabled = true;
     clearAllBtn.disabled = true;
   } else {
