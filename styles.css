@@ -241,12 +241,6 @@ section p,
 
 @media screen and (max-width: 720px) {
 
-  .body__header {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-
   main {
     display: block;
   }
@@ -258,6 +252,17 @@ section p,
   article {
     width: 100%;
     margin: 20px auto; 
+  }
+
+  .body__header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__div {
+    width: 100%;
+    margin: 10px;
   }
 
   .main__section {
