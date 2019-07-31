@@ -86,22 +86,22 @@ function getTasks() {
 
 function appendCard(card) {
   var cardText = `<article class="article__card" data-id=${card.id}>
-      <section class="article__section--top flex">
-        <h2 class="section__h2" contenteditable="true">${card.title}</h2>
-      </section>
-      <section class="article__section--mid">
+      <header class="article__section--top">
+        <h2 class="section__h2 flex" contenteditable="true">${card.title}</h2>
+      </header>
+      <section class="article__section--mid flex">
       ${pullTasks(card)}
       </section>
-      <section class="article__section--bot">
+      <footer class="article__section--bot">
         <div class="urgent__container">
           <img class="urgent__img" src="images/urgent.svg">
-          <p>Urgent</p>
+          <p>URGENT</p>
         </div>
-        <div class="delete__container">
+        <div class="delete__container flex">
           <img class="todo-card__bottom--delete" src="images/delete.svg">
-          <p>Delete</p>
+          <p>DELETE</p>
         </div>
-      </section>
+      </footer>
     </article>`;
     cardSection.insertAdjacentHTML('afterbegin', cardText);
 }
@@ -109,7 +109,7 @@ function appendCard(card) {
 function pullTasks(card) {
   var strings = '';
   card.tasks.forEach(function(task) {
-    strings += `<p data-id=${task.id}><img src="Images/checkbox.svg" alt="checkbox">${task.title}</p>`;
+    strings += `<p class="flex" data-id=${task.id} id="task"><img class="check-img" src="Images/checkbox.svg" alt="checkbox"> ${task.title}</p>`;
   })
   return strings;
 }
