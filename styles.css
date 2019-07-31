@@ -14,8 +14,8 @@ main {
 }
 
 aside {
-  margin-top: 0;
-  height: 100vh;
+  border-top: 2px solid #1F1F3D;
+  margin: 0;
   width: 30%;
   background-color: #587A8A;
 }
@@ -26,15 +26,12 @@ form {
 }
 
 section {
+  padding: 20px;
   margin: 0;
   align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
   width: 70%;
-}
-
-section p {
-  display: flex;
 }
 
 img {
@@ -45,8 +42,18 @@ img {
 article {
   background-color: #FAFDFF;
   border: 2px solid #C7D3D8;
-  margin: 15px;
-  width: 35%;
+  margin: 10px;
+  width: 45%;
+}
+
+section p,
+.header__div,
+.task-container {
+  display: flex;
+}
+
+.main__section {
+  border: 2px solid #1F1F3D;
 }
 
 ::placeholder {
@@ -70,10 +77,6 @@ article {
   background-color: #1F1F3D;
 }
 
-.header__div {
-  display: flex;
-}
-
 .header__image {
   padding: 10px;
   height: 50px;
@@ -82,8 +85,8 @@ article {
 }
 
 .header__h1 {
-  margin: 15px 10px;
-  font-size: 30px;
+  margin: 10px;
+  font-size: 35px;
   color: #FFFFFF;
   font-weight: 800;
 }
@@ -98,21 +101,6 @@ article {
   color: #FFC30C;
 }
 
-.form__div--tasks {
-  display: flex;
-  flex-direction: column;
-}
-
-.task-container {
-  display: flex;
-}
-
-/*.article__card {
-  border: 2px solid #C7D3D8;
-  margin: 15px;
-  width: 35%;
-  padding: 0 15px;
-}*/
 .section__h2 {
   font-size: 20px;
   font-weight: 700;
@@ -123,6 +111,7 @@ article {
   width: 100%;
 }
 
+.form__div--tasks,
 .article__section--mid {
   display: flex;
   flex-direction: column;
