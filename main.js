@@ -89,15 +89,15 @@ function appendCard(card) {
       <header class="article__section--top">
         <h2 class="section__h2 flex" contenteditable="true">${card.title}</h2>
       </header>
-      <section class="article__section--mid flex">
+      <ul class="article__section--mid flex">
       ${pullTasks(card)}
-      </section>
+      </ul>
       <footer class="article__section--bot">
         <div class="urgent__container">
           <img class="urgent__img" src="images/urgent.svg">
           <p>URGENT</p>
         </div>
-        <div class="delete__container flex">
+        <div class="delete__container">
           <img class="todo-card__bottom--delete" src="images/delete.svg">
           <p>DELETE</p>
         </div>
@@ -109,7 +109,7 @@ function appendCard(card) {
 function pullTasks(card) {
   var strings = '';
   card.tasks.forEach(function(task) {
-    strings += `<p class="flex" data-id=${task.id} id="task"><img class="check-img" src="Images/checkbox.svg" alt="checkbox"> ${task.title}</p>`;
+    strings += `<li class="flex" data-id=${task.id} id="task__text"><img class="check-img" src="Images/checkbox.svg" alt="checkbox"> ${task.title}</li>`;
   })
   return strings;
 }
