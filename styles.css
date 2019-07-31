@@ -27,6 +27,7 @@ form {
 }
 
 input {
+  outline: none;
   height: 50px;
   border: 2px solid #1F1F3D;
   border-radius: 2px;
@@ -163,8 +164,8 @@ form,
 .form__btn--plus {
   width: 50px;
   font-weight: lighter;
-  font-size: 49px;
-  padding-top: 0;
+  font-size: 39px;
+  padding: 0;
 }
 
 .article__section--bot {
