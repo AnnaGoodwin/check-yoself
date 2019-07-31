@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   margin: auto 0;
+  transition: ease all .3s;
 }
 
 /* Main Elements */
