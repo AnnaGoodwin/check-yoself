@@ -36,12 +36,10 @@ function appendToDos() {
 }
 
 function displayTask() {
-  var task = `
-    <div class="task-container" data-id="${Date.now()}">
+  var task = `<div class="task-container" data-id="${Date.now()}">
       <img class="delete-btn" src="Images/delete.svg" alt="delete">
       <p class="task-text">${taskInput.value}</p>
-    </div>
-  `
+    </div>`
   taskContainer.insertAdjacentHTML('beforeend', task);
   taskInput.value = '';
   handlePlusBtn();
@@ -69,9 +67,10 @@ function buildCard() {
     tasks:tasksArr
   });
   listOfToDos.push(toDoList);
-  toDoList.saveToStorage(listOfToDos);
   appendCard(toDoList);
+  toDoList.saveToStorage(listOfToDos);
   clearAll();
+  disableBtn();
 }
 
 function getTasks() {
@@ -86,8 +85,7 @@ function getTasks() {
 }
 
 function appendCard(card) {
-  var cardText = `
-    <article class="article__card" data-id=${card.id}>
+  var cardText = `<article class="article__card" data-id=${card.id}>
       <section class="article__section--top flex">
         <h2 class="section__h2" contenteditable="true">${card.title}</h2>
       </section>
@@ -123,11 +121,11 @@ function pullTasks(card) {
 function clearAll() {
   taskInput.value = '';
   titleInput.value = '';
-  taskList.innerHTML = '';
+  taskList.innerText = '';
 }
 
 function disableBtn() {
-  if(taskList.innerHTML === '' || titleInput.value === '') {
+  if(taskList.innerText === '' || titleInput.value === '') {
     makeTaskListBtn.disabled = true;
     clearAllBtn.disabled = true;
   } else {
