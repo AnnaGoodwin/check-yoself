@@ -23,7 +23,8 @@ persist on page load (saved to localStorage) plus allow them to edit their task 
 
 ### Build
 ![desktop](https://user-images.githubusercontent.com/32857284/62207552-a268a280-b351-11e9-98e5-d69d67023bfd.png)
-![mobile](https://user-images.githubusercontent.com/32857284/62207937-b06af300-b352-11e9-8775-56dcfe7968de.png)
+![mobile](https://user-images.githubusercontent.com/32857284/62207564-a72d5680-b351-11e9-8424-37b85c717955.png)
+![mobile2](https://user-images.githubusercontent.com/32857284/62207937-b06af300-b352-11e9-8775-56dcfe7968de.png)
 
 ## Contributors
 Anna Olsen
